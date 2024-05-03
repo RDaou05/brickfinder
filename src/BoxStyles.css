@@ -1,0 +1,9 @@
+.box {
+  background-color: green;
+  z-index: 10;
+  width: 1vw;
+  height: 3.5vh;
+  top: 60vh;
+  left: 20vw;
+  border: 1px solid black;
+}
