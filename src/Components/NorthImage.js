@@ -5,6 +5,9 @@ import classes from "../PictureStyles.module.css";
 const NorthImage = () => {
   const nameBoxContainerRef = useRef();
   const imageRef = useRef();
+  const [dimChanged, setDimChanged] = useState(0);
+  const [boxWidth, setBoxWidth] = useState("0px");
+  const [boxHeight, setBoxHeight] = useState("0px");
   // const [tenP, setTenP] = useState();
 
   const resizeOverLayer = () => {
@@ -13,6 +16,7 @@ const NorthImage = () => {
       let height = imageRef.current.offsetHeight;
       nameBoxContainerRef.current.style.width = width + "px";
       nameBoxContainerRef.current.style.height = height + "px";
+      setDimChanged(dimChanged + 1);
       // setTenP(imageRef.current.offsetWidth * 0.01);
     }, 300);
   };
@@ -27,6 +31,7 @@ const NorthImage = () => {
       // // Set the width of element2 to be the same as element1
       nameBoxContainerRef.current.style.width = width + "px";
       nameBoxContainerRef.current.style.height = height + "px";
+      setDimChanged(dimChanged + 1);
       // setTenP(imageRef.current.offsetWidth * 0.01);
     }, 300);
     window.addEventListener("resize", resizeOverLayer);
@@ -35,12 +40,24 @@ const NorthImage = () => {
     };
   }, []);
 
+  useEffect(() => {
+    let width = imageRef.current.offsetWidth;
+    let height = imageRef.current.offsetHeight;
+    let newWidth = width * 0.5;
+    let newHeight = height * 0.5;
+    setBoxWidth(newWidth + "px");
+    setBoxHeight(newHeight + "px");
+  }, [dimChanged]);
+
   return (
     <div className={classes.imageContainer}>
       <div className={classes.nameBoxContainer} ref={nameBoxContainerRef}>
-        <div className={classes.box}></div>
         {Array.from({ length: 1039 }, (_, i) => (
-          <div className={classes.box} key={i}></div>
+          <div
+            className={classes.box}
+            key={i}
+            style={{ width: boxWidth, height: boxHeight }}
+          ></div>
         ))}
       </div>
       <img

@@ -19,7 +19,7 @@ html {
   background-color: transparent;
   position: absolute;
   height: 97vh;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .nameBoxContainer {
@@ -43,8 +43,8 @@ html {
 .box {
   background-color: green;
   z-index: 10;
-  width: 1vw;
-  height: 3.5vh;
+  /* width: 10px;
+  height: 10px; */
   top: 60px;
   left: 20px;
   border: 1px solid black;
