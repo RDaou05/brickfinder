@@ -41,10 +41,10 @@ const NorthImage = () => {
   }, []);
 
   useEffect(() => {
-    let width = imageRef.current.offsetWidth;
-    let height = imageRef.current.offsetHeight;
-    let newWidth = width * 0.5;
-    let newHeight = height * 0.5;
+    let width = nameBoxContainerRef.current.offsetWidth;
+    let height = nameBoxContainerRef.current.offsetHeight;
+    let newWidth = width * 0.02;
+    let newHeight = height * 0.05;
     setBoxWidth(newWidth + "px");
     setBoxHeight(newHeight + "px");
   }, [dimChanged]);
@@ -52,7 +52,7 @@ const NorthImage = () => {
   return (
     <div className={classes.imageContainer}>
       <div className={classes.nameBoxContainer} ref={nameBoxContainerRef}>
-        {Array.from({ length: 1039 }, (_, i) => (
+        {Array.from({ length: 600 }, (_, i) => (
           <div
             className={classes.box}
             key={i}
