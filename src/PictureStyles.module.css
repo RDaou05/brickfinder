@@ -9,10 +9,11 @@ html {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   position: relative;
   height: 100vh;
+
   /* pad */
 }
 
-.nameBoxContainer {
+.imageContainer {
   width: 100%;
   float: left;
   height: 100%;
@@ -20,32 +21,39 @@ html {
   background-color: transparent;
   position: absolute;
   height: 97vh;
-  overflow: hidden;
-}
-
-.nameBoxContainer {
-  display: flex;
-  flex-wrap: wrap;
-  width: 400px;
-  height: 300px;
-  border: 2px solid #000;
-  align-content: center;
-  justify-content: center;
+  /* overflow: hidden; */
 }
 
 .imageContainer {
-  float: left;
-  height: fit-content;
-  width: fit-content;
-  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  height: 100vh;
+  border: 2px solid #000;
+  align-content: center;
+  justify-content: center;
+  background-image: url(Pictures/North.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.mainContainer {
+  height: 100vh;
+  width: 100vw;
 }
 
 .box {
   background-color: transparent;
   z-index: 10;
-  /* width: 2%;
-  height: 2%; */
+  width: 15px;
+  height: 28px;
   /* top: 60px;
   left: 20px; */
   border: 1px solid black;
+}
+
+.imageTable {
+  display: table;
+  width: 100%;
+  height: 100%;
 }
