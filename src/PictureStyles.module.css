@@ -8,44 +8,34 @@ html {
   float: left;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   position: relative;
-  height: 100vh;
-  /* pad */
-}
-
-.nameBoxContainer {
-  width: 100%;
-  float: left;
-  height: 100%;
-  z-index: 10;
-  background-color: transparent;
-  position: absolute;
-  height: 97vh;
-  overflow: hidden;
-}
-
-.nameBoxContainer {
-  display: flex;
-  flex-wrap: wrap;
-  width: 400px;
-  height: 300px;
-  border: 2px solid #000;
-  align-content: center;
-  justify-content: center;
+  border: 1px solid white;
 }
 
 .imageContainer {
   float: left;
-  height: fit-content;
+  height: -moz-fit-content;
+  height: 90%;
+  width: -moz-fit-content;
   width: fit-content;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  align-self: center;
 }
 
-.box {
-  background-color: transparent;
-  z-index: 10;
-  /* width: 2%;
-  height: 2%; */
-  /* top: 60px;
-  left: 20px; */
-  border: 1px solid black;
+.mainContainer {
+  width: 100vw;
+  height: 89vh;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.screenContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.nameListContainer {
 }
