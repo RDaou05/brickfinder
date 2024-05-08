@@ -2,12 +2,21 @@ import React, { useEffect, useRef, useState } from "react";
 import South from "../Pictures/South.png";
 import classes from "../PictureStyles.module.css";
 import Navbar from "./Navbar";
-import SouthNames from "./lists/WestNames";
+import SouthNames from "./lists/SouthNames";
 
 const SouthImage = () => {
-  const nameBoxContainerRef = useRef();
   const [imageNumber, setImageNumber] = useState(-1);
   const imageRef = useRef();
+  const nameBoxContainerRef = useRef();
+
+  setInterval(() => {
+    try {
+      if (imageRef.current.offsetWidth > 50) {
+        nameBoxContainerRef.current.style.width =
+          imageRef.current.offsetWidth + "px";
+      }
+    } catch (err) {}
+  }, 100);
 
   return (
     <div className={classes.screenDiv}>
@@ -32,10 +41,11 @@ const SouthImage = () => {
             ref={imageRef}
           />
         </div>
-        <div className={classes.nameListContainer}>
+        <div className={classes.nameListContainer} ref={nameBoxContainerRef}>
           {SouthNames.map((element, index) => (
             <p
               key={index}
+              className={classes.nameTag}
               onClick={() => {
                 setImageNumber(index);
               }}

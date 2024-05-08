@@ -53,20 +53,20 @@ const Navbar = () => {
       >
         North East Quadrant
       </button>
-      <button
+      {/* <button
         onClick={() => {
           navigate("/SEI", { replace: false });
         }}
       >
         South East Quadrant
-      </button>
-      <button
+      </button> */}
+      {/* <button
         onClick={() => {
           navigate("/SWI", { replace: false });
         }}
       >
         South West Quadrant
-      </button>
+      </button> */}
     </div>
   );
 };

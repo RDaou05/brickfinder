@@ -5,6 +5,14 @@ import Navbar from "./Navbar";
 
 const SEImage = () => {
   const imageRef = useRef();
+  const nameBoxContainerRef = useRef();
+
+  setInterval(() => {
+    if (imageRef.current.offsetWidth > 50) {
+      nameBoxContainerRef.current.style.width =
+        imageRef.current.offsetWidth + "px";
+    }
+  }, 100);
   return (
     <div className={classes.screenDiv}>
       <Navbar />
@@ -18,7 +26,10 @@ const SEImage = () => {
             ref={imageRef}
           />
         </div>
-        <div className={classes.nameListContainer}></div>
+        <div
+          className={classes.nameListContainer}
+          ref={nameBoxContainerRef}
+        ></div>
       </div>
     </div>
   );

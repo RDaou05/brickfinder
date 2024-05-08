@@ -41,3 +41,11 @@ button:hover {
   padding: 10px;
   cursor: pointer;
 }
+
+.mainScreenContentContainer {
+}
+
+.mainScreen {
+  display: flex;
+  flex-direction: column;
+}

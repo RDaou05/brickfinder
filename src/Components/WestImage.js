@@ -9,6 +9,15 @@ const WestImage = () => {
   const [imageNumber, setImageNumber] = useState(-1);
   const imageRef = useRef();
 
+  setInterval(() => {
+    try {
+      if (imageRef.current.offsetWidth > 50) {
+        nameBoxContainerRef.current.style.width =
+          imageRef.current.offsetWidth + "px";
+      }
+    } catch (err) {}
+  }, 100);
+
   return (
     <div className={classes.screenDiv}>
       <Navbar />
@@ -20,16 +29,17 @@ const WestImage = () => {
             src={
               imageNumber == -1
                 ? West
-                : require(`../Pictures/WestNames/IMG_${1227 + imageNumber}.png`)
+                : require(`../Pictures/WestNames/IMG_${1226 + imageNumber}.png`)
             }
             alt=""
             ref={imageRef}
           />
         </div>
-        <div className={classes.nameListContainer}>
+        <div className={classes.nameListContainer} ref={nameBoxContainerRef}>
           {WestNames.map((element, index) => (
             <p
               key={index}
+              className={classes.nameTag}
               onClick={() => {
                 setImageNumber(index);
               }}

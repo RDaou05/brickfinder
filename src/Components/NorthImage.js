@@ -9,6 +9,15 @@ const NorthImage = () => {
   const [imageNumber, setImageNumber] = useState(-1);
   const imageRef = useRef();
 
+  setInterval(() => {
+    try {
+      if (imageRef.current.offsetWidth > 50) {
+        nameBoxContainerRef.current.style.width =
+          imageRef.current.offsetWidth + "px";
+      }
+    } catch (err) {}
+  }, 100);
+
   return (
     <div className={classes.screenDiv}>
       <Navbar />
@@ -30,10 +39,11 @@ const NorthImage = () => {
             ref={imageRef}
           />
         </div>
-        <div className={classes.nameListContainer}>
+        <div className={classes.nameListContainer} ref={nameBoxContainerRef}>
           {northNames.map((element, index) => (
             <p
               key={index}
+              className={classes.nameTag}
               onClick={() => {
                 setImageNumber(index);
               }}
